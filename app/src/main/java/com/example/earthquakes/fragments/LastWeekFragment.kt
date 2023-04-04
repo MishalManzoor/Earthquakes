@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.earthquakes.R
 import com.example.earthquakes.adapter.AdapterClass
 import com.example.earthquakes.helperClass.properties
-import com.example.earthquakes.networkConnection.connection
+import com.example.earthquakes.networkConnection.Connection
 import com.example.earthquakes.retrofit_Instances.InstanceForWeek
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -37,7 +37,7 @@ class LastWeekFragment : Fragment() {
         mRecycler = view.findViewById(R.id.recyclerView2)
         mConnect = view.findViewById(R.id.connection)
 
-        val mNetworkConnection = connection(requireContext())
+        val mNetworkConnection = Connection(requireContext())
 
         mNetworkConnection.observe(viewLifecycleOwner) { isConnected ->
             if(isConnected){

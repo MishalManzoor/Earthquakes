@@ -1,7 +1,6 @@
 package com.example.earthquakes.fragments
 
 import android.annotation.SuppressLint
-import android.opengl.Visibility
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -15,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.earthquakes.R
 import com.example.earthquakes.adapter.AdapterClass
 import com.example.earthquakes.helperClass.properties
-import com.example.earthquakes.networkConnection.connection
+import com.example.earthquakes.networkConnection.Connection
 import com.example.earthquakes.retrofit_Instances.InstanceForLatest
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -40,7 +39,7 @@ class LatestFragment : Fragment() {
         mRecycler = view.findViewById(R.id.recyclerView)
         mConnect = view.findViewById(R.id.connection)
 
-        val mNetworkConnection = connection(requireContext())
+        val mNetworkConnection = Connection(requireContext())
 
         mNetworkConnection.observe(viewLifecycleOwner){ isConnected ->
 

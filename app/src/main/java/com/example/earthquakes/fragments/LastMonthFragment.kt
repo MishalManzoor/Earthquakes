@@ -14,9 +14,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.earthquakes.R
 import com.example.earthquakes.adapter.AdapterClass
 import com.example.earthquakes.helperClass.properties
-import com.example.earthquakes.networkConnection.connection
+import com.example.earthquakes.networkConnection.Connection
 import com.example.earthquakes.retrofit_Instances.InstanceForMonth
-import com.example.earthquakes.retrofit_Instances.InstanceForWeek
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -40,7 +39,7 @@ class LastMonthFragment : Fragment() {
 
         mConnect = view.findViewById(R.id.connection)
 
-        val mNetworkConnection = connection(requireContext())
+        val mNetworkConnection = Connection(requireContext())
 
         mNetworkConnection.observe(viewLifecycleOwner) { isConnected ->
             if(isConnected){
