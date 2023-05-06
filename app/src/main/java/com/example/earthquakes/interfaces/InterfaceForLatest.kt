@@ -7,7 +7,6 @@ import retrofit2.http.GET
 interface InterfaceForLatest {
 
     // past day 4.5+
-    //https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson
 
     @GET("feed/v1.0/summary/4.5_day.geojson")
     suspend fun getLatestUpdate() : Response<HelperClass>
