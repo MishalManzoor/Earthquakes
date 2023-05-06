@@ -41,8 +41,12 @@ class Connection(private val context : Context) : LiveData<Boolean>() {
 
     override fun onInactive() {
         super.onInactive()
-
-        connectivityManager.unregisterNetworkCallback(connectionCallback())
+        try{
+            connectivityManager.unregisterNetworkCallback(connectionCallback())
+        }
+        catch (e : IllegalArgumentException){
+            e.printStackTrace()
+        }
     }
 
     private fun connectionCallback() :

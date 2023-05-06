@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.earthquakes.R
@@ -18,7 +19,8 @@ import kotlin.math.floor
 
 class AdapterClass(
     private var context: Context,
-    private var mList: List<properties>
+    private var mList: List<properties>,
+    private var listener : OnClick
 ) :
     RecyclerView.Adapter<AdapterClass.ViewHolder>() {
 
@@ -28,6 +30,7 @@ class AdapterClass(
         var place: TextView = itemView.findViewById(R.id.place)
         var date: TextView = itemView.findViewById(R.id.date)
         var time: TextView = itemView.findViewById(R.id.time)
+        var card : CardView = itemView.findViewById(R.id.cardView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -69,10 +72,18 @@ class AdapterClass(
 
         // Set the color on the magnitude circle
         magnitudeCircle.setColor(magnitudeColor)
+
+        holder.card.setOnClickListener {
+            listener.onClickListener(list.url)
+        }
     }
 
     override fun getItemCount(): Int {
         return mList.size
+    }
+
+    interface OnClick{
+        fun onClickListener(url : String)
     }
 
     @SuppressLint("SimpleDateFormat")
