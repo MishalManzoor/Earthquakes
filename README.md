@@ -6,7 +6,7 @@ The Quake Info app provides the updated list of earthquake occurrences happening
 Accurate and precise: The earthquake list provides up-to-date and accurate information with zero errors. The data is in accordance with the USGS data.
 
 
-## Library used
+## Library
 
 - Retrofit
 
