@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.test.earthquakes'
+    namespace 'com.test1.earthquakes'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.test.earthquakes"
+        applicationId "com.test1.earthquakes"
         minSdk 21
         targetSdk 33
         versionCode 1
