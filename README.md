@@ -1,5 +1,5 @@
 
-# Earthquak App
+# Earthquake App
 
 The Quake Info app provides the updated list of earthquake occurrences happening around the globe. The list comes straight from the U.S. Geological Survey (USGS) organization.
 
